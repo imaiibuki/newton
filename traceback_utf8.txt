@@ -1,0 +1,121 @@
+﻿e:\Python\Newton\venv\Scripts\python.exe : Warning: You are sending unauthenticated
+ requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and fas
+ter downloads.
+発生場所 行:1 文字:1
++ e:\Python\Newton\venv\Scripts\python.exe -c "import sys; from server. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:Str 
+   ing) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Fetching 4 files: 100%|##########| 4/4 [00:00<?, ?it/s]
+The fast path is not available because one of the required library is not installed
+. Falling back to torch implementation. To install follow https://github.com/fla-or
+g/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1
+d
+
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/427 [00:00<04:08,  1.71it/s]
+Loading weights:   0%|          | 2/427 [00:01<04:10,  1.70it/s]
+Loading weights:   3%|3         | 13/427 [00:01<00:27, 15.04it/s]
+Loading weights:   6%|6         | 26/427 [00:01<00:12, 32.11it/s]
+Loading weights:   9%|8         | 37/427 [00:01<00:08, 44.79it/s]
+Loading weights:  11%|#         | 46/427 [00:01<00:07, 49.68it/s]
+Loading weights:  14%|#4        | 61/427 [00:01<00:05, 70.33it/s]
+Loading weights:  17%|#6        | 72/427 [00:01<00:04, 73.56it/s]
+Loading weights:  19%|#9        | 82/427 [00:02<00:04, 73.54it/s]
+Loading weights:  22%|##2       | 95/427 [00:02<00:03, 85.60it/s]
+Loading weights:  25%|##4       | 105/427 [00:02<00:03, 81.84it/s]
+Loading weights:  28%|##8       | 120/427 [00:02<00:03, 92.79it/s]
+Loading weights:  31%|###1      | 133/427 [00:02<00:02, 101.27it/s]
+Loading weights:  34%|###4      | 146/427 [00:02<00:02, 108.35it/s]
+Loading weights:  37%|###7      | 158/427 [00:02<00:03, 89.44it/s] 
+Loading weights:  41%|####      | 173/427 [00:02<00:02, 98.32it/s]
+Loading weights:  44%|####3     | 186/427 [00:03<00:02, 105.66it/s]
+Loading weights:  47%|####6     | 199/427 [00:03<00:02, 111.48it/s]
+Loading weights:  49%|####9     | 211/427 [00:03<00:02, 91.00it/s] 
+Loading weights:  53%|#####2    | 226/427 [00:03<00:02, 98.90it/s]
+Loading weights:  56%|#####5    | 239/427 [00:03<00:01, 106.31it/s]
+Loading weights:  59%|#####9    | 252/427 [00:03<00:01, 111.49it/s]
+Loading weights:  62%|######1   | 264/427 [00:03<00:01, 91.21it/s] 
+Loading weights:  65%|######5   | 279/427 [00:03<00:01, 99.14it/s]
+Loading weights:  68%|######8   | 292/427 [00:04<00:01, 105.60it/s]
+Loading weights:  71%|#######1  | 305/427 [00:04<00:01, 111.17it/s]
+Loading weights:  74%|#######4  | 317/427 [00:04<00:01, 90.41it/s] 
+Loading weights:  78%|#######7  | 331/427 [00:04<00:00, 101.72it/s]
+Loading weights:  81%|########  | 344/427 [00:04<00:00, 107.32it/s]
+Loading weights:  83%|########3 | 356/427 [00:04<00:00, 104.07it/s]
+Loading weights:  86%|########5 | 367/427 [00:04<00:00, 84.88it/s] 
+Loading weights:  90%|########9 | 384/427 [00:04<00:00, 101.87it/s]
+Loading weights:  93%|#########2| 397/427 [00:05<00:00, 106.69it/s]
+Loading weights:  96%|#########5| 409/427 [00:05<00:00, 103.32it/s]
+Loading weights:  98%|#########8| 420/427 [00:05<00:00, 83.83it/s] 
+Loading weights: 100%|##########| 427/427 [00:05<00:00, 78.30it/s]
+Exception in thread Thread-5 (_generate):
+Traceback (most recent call last):
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\cache_utils.py", line 
+1031, in has_previous_state
+    layer_idx = next(
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fuga1\AppData\Local\Programs\Python\Python310\lib\threading.py", l
+ine 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\fuga1\AppData\Local\Programs\Python\Python310\lib\threading.py", l
+ine 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\Python\Newton\server\model.py", line 115, in _generate
+    self.model.generate(**generate_kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\torch\utils\_contextlib.py", line 1
+16, in decorate_context
+    return func(*args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\generation\utils.py", 
+line 2543, in generate
+    result = decoding_method(
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\generation\utils.py", 
+line 2736, in _sample
+    outputs = self._prefill(
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\generation\utils.py", 
+line 3768, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "E:\Python\Newton\venv\lib\site-packages\torch\nn\modules\module.py", line 1
+736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\torch\nn\modules\module.py", line 1
+747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\utils\generic.py", lin
+e 876, in wrapper
+    output = func(self, *args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\models\qwen3_5\modelin
+g_qwen3_5.py", line 1740, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+  File "E:\Python\Newton\venv\lib\site-packages\torch\nn\modules\module.py", line 1
+736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\torch\nn\modules\module.py", line 1
+747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\utils\generic.py", lin
+e 952, in wrapper
+    output = func(self, *args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\utils\output_capturing
+.py", line 248, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\models\qwen3_5\modelin
+g_qwen3_5.py", line 1267, in forward
+    linear_attn_mask = self._update_linear_attn_mask(attention_mask, past_key_value
+s)
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\models\qwen3_5\modelin
+g_qwen3_5.py", line 1300, in _update_linear_attn_mask
+    if (past_key_values is not None and past_key_values.has_previous_state()) or (
+  File "E:\Python\Newton\venv\lib\site-packages\transformers\cache_utils.py", line 
+1037, in has_previous_state
+    raise ValueError(
+ValueError: `has_previous_state` can only be called on LinearAttention layers, and 
+the current Cache seem to only contain Attention layers.
